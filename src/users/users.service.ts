@@ -29,8 +29,14 @@ export class UsersService {
       throw new Error('User not found.');
     }
     Object.assign(user, attrs);
-    return this.repo.save(user)
+    return this.repo.save(user);
   }
 
-  remove() {}
+  async remove(id: number) {
+    const user = await this.repo.findOneBy({ id: id });
+    if (!user) {
+      throw new Error()
+    }
+    this.repo.remove(user)
+  }
 }
