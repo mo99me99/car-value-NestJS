@@ -20,7 +20,9 @@ export class UsersService {
   }
 
   find(email: string) {
-    return this.repo.find({ where: { email: email } });
+    console.log('inside of find method');
+    const users = this.repo.find({ where: { email: email } });
+    return users; 
   }
 
   async update(id: number, attrs: Partial<User>) {
@@ -35,8 +37,8 @@ export class UsersService {
   async remove(id: number) {
     const user = await this.repo.findOneBy({ id: id });
     if (!user) {
-      throw new Error()
+      throw new Error();
     }
-    this.repo.remove(user)
+    this.repo.remove(user);
   }
 }
