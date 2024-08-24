@@ -19,3 +19,20 @@ GET http://localHost:3000/auth?email=test4@fake.com HTTP/1.1
 
 ### Delete a user with a given id
 DELETE  http://localHost:3000/auth/2
+
+
+### Update a user
+PATCH http://localHost:3000/auth/3
+Content-Type: application/json
+
+{
+  "email":"bb@bb.com"
+}
+
+### Update a user
+PATCH http://localHost:3000/auth/3
+Content-Type: application/json
+
+{
+  "password":"bbbbmmmm"
+}
