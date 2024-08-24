@@ -1,0 +1,9 @@
+### Create a User
+POST http://localHost:3000/auth/signup
+Content-Type: application/json
+
+{
+  "email":"test@fake.com",
+  "password":"12345678",
+  "other":456
+}
