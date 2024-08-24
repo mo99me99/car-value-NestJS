@@ -10,7 +10,7 @@ Content-Type: application/json
 
 
 ### Find a paricular user with a given ID
-GET http://localHost:3000/auth/1 HTTP/1.1
+GET http://localHost:3000/auth/9 HTTP/1.1
 
 
 ### Find all users with a given email
@@ -18,7 +18,7 @@ GET http://localHost:3000/auth?email=test4@fake.com HTTP/1.1
 
 
 ### Delete a user with a given id
-DELETE  http://localHost:3000/auth/2
+DELETE  http://localHost:3000/auth/9
 
 
 ### Update a user
@@ -30,7 +30,7 @@ Content-Type: application/json
 }
 
 ### Update a user
-PATCH http://localHost:3000/auth/3
+PATCH http://localHost:3000/auth/9
 Content-Type: application/json
 
 {
