@@ -7,9 +7,12 @@ import { User } from './user.entity';
 export class UsersService {
   constructor(@InjectRepository(User) private repo: Repository<User>) {}
 
-  create(email:string, password:string){
-    const user = this.repo.create({email, password});
+  create(email: string, password: string) {
+    const user = this.repo.create({ email, password });
+    return this.repo.save(user);
 
-    return this.repo.save(user)
+    // we don't use it and use create and then save method instead.
+    // so Hooks will be executed this way.
+    // return this.repo.save({email, password})
   }
 }
