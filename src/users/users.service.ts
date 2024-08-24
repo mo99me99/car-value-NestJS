@@ -10,9 +10,20 @@ export class UsersService {
   create(email: string, password: string) {
     const user = this.repo.create({ email, password });
     return this.repo.save(user);
-
     // we don't use it and use create and then save method instead.
     // so Hooks will be executed this way.
     // return this.repo.save({email, password})
   }
+
+  findOne(id: number) {
+    return this.repo.findOneBy({ id: id });
+  }
+
+  find(email: string) {
+    return this.repo.find({ where: { email: email } });
+  }
+
+  update() {}
+
+  remove() {}
 }
