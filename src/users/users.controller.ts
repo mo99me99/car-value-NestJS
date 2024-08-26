@@ -15,7 +15,6 @@ import { UpdateUserDto } from './dtos/update-user.dto';
 import { Serialize } from 'src/interceptors/serialize.interceptor';
 import { UserDto } from './dtos/user.dto';
 
-
 @Controller('auth')
 @Serialize(UserDto)
 export class UsersController {
