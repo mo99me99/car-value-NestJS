@@ -23,7 +23,6 @@ export class UsersService {
   }
 
   find(email: string) {
-    console.log('inside of find method');
     const users = this.repo.find({ where: { email: email } });
     return users;
   }
