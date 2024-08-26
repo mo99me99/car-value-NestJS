@@ -16,13 +16,16 @@ export class UsersService {
   }
 
   findOne(id: number) {
+    if (!id) {
+      return null;
+    }
     return this.repo.findOneBy({ id: id });
   }
 
   find(email: string) {
     console.log('inside of find method');
     const users = this.repo.find({ where: { email: email } });
-    return users; 
+    return users;
   }
 
   async update(id: number, attrs: Partial<User>) {

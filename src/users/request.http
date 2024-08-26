@@ -1,15 +1,27 @@
 ### Create a User
-POST http://localHost:3000/auth/signin
+POST http://localHost:3000/auth/signup
 Content-Type: application/json
 
 {
-  "email":"d@fake.com",
+  "email":"y@fake.com",
   "password":"123456789",
   "other":456
 }
 
-###
+### Sign in as an existing user
+POST http://localHost:3000/auth/signin
+Content-Type: application/json
 
+{
+  "email":"y@fake.com",
+  "password":"123456789"
+}
+
+### Get the currently signed in user
+GET http://localHost:3000/auth/whoami HTTP/1.1
+
+### Sign out
+POST  http://localHost:3000/auth/signout HTTP/1.1
 
 ### Find a paricular user with a given ID
 GET http://localHost:3000/auth/4 HTTP/1.1
