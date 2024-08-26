@@ -1,12 +1,14 @@
 ### Create a User
-POST http://localHost:3000/auth/signup
+POST http://localHost:3000/auth/signin
 Content-Type: application/json
 
 {
-  "email":"b@fake.com",
+  "email":"d@fake.com",
   "password":"123456789",
   "other":456
 }
+
+###
 
 
 ### Find a paricular user with a given ID
