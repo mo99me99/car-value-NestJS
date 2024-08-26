@@ -30,7 +30,7 @@ Content-Type: application/json
 }
 
 ### Update a user
-PATCH http://localHost:3000/auth/9
+PATCH http://localHost:3000/auth/7
 Content-Type: application/json
 
 {
