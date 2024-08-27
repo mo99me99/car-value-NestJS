@@ -52,4 +52,26 @@ describe('AuthService', () => {
       service.signin('nonUsedEmail@fake.com', 'password'),
     ).rejects.toThrow();
   });
+
+  it('throws if an invalid password is provided', async () => {
+    fakeUsersService.find = () =>
+      Promise.resolve([
+        { email: 'test@fake.com', password: 'password' } as User,
+      ]);
+
+    await expect(service.signin('email@gmail.com', 'pswd')).rejects.toThrow();
+  });
+
+  it('returns a user if correct password provided.', async () => {
+    fakeUsersService.find = () =>
+      Promise.resolve([
+        {
+          email: 'test@fake.com',
+          password:
+            '906fbe9c27307fab.64beb175f97ca3ce434842358da506ca28f34e9c4f5e5c399ecbf8da14dcb269',
+        } as User,
+      ]);
+    const user = await service.signin('test@fake.com', 'password');
+    expect(user).toBeDefined();
+  });
 });
