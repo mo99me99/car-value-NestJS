@@ -9,9 +9,7 @@ async function bootstrap() {
     keys:['heaoe']
   }))
   app.useGlobalPipes(
-    new ValidationPipe({
-      whitelist: true,
-    }),
+    
   );
   await app.listen(3000);
 }
