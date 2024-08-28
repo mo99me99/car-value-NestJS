@@ -3,7 +3,7 @@ POST http://localHost:3000/auth/signup
 Content-Type: application/json
 
 {
-  "email":"ufsd@fake.com",
+  "email":"y@fake.com",
   "password":"123456789",
   "other":456
 }
