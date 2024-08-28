@@ -22,3 +22,13 @@ Content-Type: application/json
 #   "email":"y@fake.com",
 #   "password":"123456789"
 # }
+
+
+
+### Approve an existing report
+PATCH http://localhost:3000/reports/8
+Content-Type: application/json
+
+{
+  "approved":false
+}
