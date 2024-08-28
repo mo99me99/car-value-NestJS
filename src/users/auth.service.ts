@@ -23,7 +23,6 @@ export class AuthService {
     // hash the user's password
     // Generate a salt
     const salt = randomBytes(8).toString('hex');
-    console.log('salt : ', salt);
     // Hash the salt and the password togrther
     const hash = (await scrypt(password, salt, 32)) as Buffer;
     // Join the hashed result and store it in db

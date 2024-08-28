@@ -1,9 +1,11 @@
-import { CanActivate, ExecutionContext } from '@nestjs/common';
+import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
 import { Observable } from 'rxjs';
-import { UsersService } from 'src/users/users.service';
+import { UsersService } from '../users/users.service';
 
+@Injectable()
 export class AuthGuard implements CanActivate {
-  constructor(private usersService: UsersService) {}
+  constructor(public usersService: UsersService) {
+  }
 
   async canActivate(context: ExecutionContext) {
     const request = context.switchToHttp().getRequest();
